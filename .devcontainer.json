@@ -1,0 +1,32 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.191.0/containers/docker-existing-docker-compose
+// If you want to run as a non-root user in the container, see .devcontainer/docker-compose.yml.
+{
+    "name": "redact-composer-inspector-dev",
+    "dockerComposeFile": [
+        "docker-compose.yml"
+    ],
+    "service": "expo-dev",
+    "workspaceFolder": "/root/redact-composer-inspector",
+
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                // expo and react native extensions
+                "bycedric.vscode-expo",
+                "msjsdiag.vscode-react-native",
+                "eg2.vscode-npm-script",
+                // ESLint
+                "dbaeumer.vscode-eslint",
+                // git extensions that are highly recommended
+                "eamodio.gitlens",
+                "mhutchie.git-graph",
+                // nice file icons from vscode icons team
+                "vscode-icons-team.vscode-icons"
+            ]
+        }
+    },
+
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    "forwardPorts": [ 19000, 19001, 19002 ]
+}

@@ -1,0 +1,10 @@
+services:
+  expo-dev:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./redact-composer-inspector:/root/redact-composer-inspector
+      - vs-server:/root/.vscode-server
+volumes:
+  vs-server: {}
