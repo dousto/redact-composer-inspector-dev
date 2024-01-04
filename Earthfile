@@ -24,16 +24,20 @@ build-site:
 
     RUN npm install
     RUN npx expo export:web
-    RUN cp web-build/index.html web-build/404.html # React routing hack for GHP
     SAVE ARTIFACT web-build
 
 deploy-ghp-site:
     WORKDIR ghp-deploy
     GIT CLONE --branch website git@github.com:dousto/redact-composer-inspector.git website-branch
+    # Clear the old website files
     RUN rm -r website-branch/*
+    # Copy the new website build files (with custom homepage for proper react navigation behavior)
     COPY (+build-site/web-build --homepage='/redact-composer-inspector/') new-build
     RUN mv new-build/* website-branch/
-    RUN rm -r new-build
+    # React routing hack for GHP -- serve index.html in case of 404
+    RUN cp website-branch/index.html website-branch/404.html
+
+    # Prepare for commit and push (if --push)
     WORKDIR website-branch
     RUN git add .
     RUN --no-cache git status
@@ -43,10 +47,7 @@ deploy-ghp-site:
     RUN --push --ssh git push --verbose ssh://git@github.com/dousto/redact-composer-inspector HEAD:refs/heads/website
 
 expo:
-    FROM node:18
-    RUN npm install -g npm@latest
-    RUN npm install -g eslint typescript expo-cli @expo/ngrok@^4.1.0
-    RUN node --version && npm --version
+    FROM DOCKERFILE .
 
 expo-jq:
     FROM +expo
