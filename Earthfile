@@ -54,7 +54,7 @@ build-site:
 
 # dev-deploy-ghp-site Builds and deploys the GitHub Pages site at https://dousto.github.io/redact-composer-inspector-dev.
 #                     Deployment uses a forwarded SSH socket so will only work if you can locally `git push` via SSH.
-#     ARGS: --repo:   The git repo for the build's source files. Can be 'local' or an SSH git url. (default: 'local')
+#     ARGS: --repo    The git repo for the build's source files. Can be 'local' or an SSH git url. (default: 'local')
 #           --branch  The branch to use with `--repo`. No effect if `--repo=local`. (default: 'main')
 dev-deploy-ghp-site:
     FROM +ssh-init
