@@ -7,6 +7,7 @@ Dev Workspace for [redact-composer-inspector](https://github.com/dousto/redact-c
 4. Open `.` in VS Code and choose to run the dev container.
 5. From the container's terminal
     ```
+    npm install
     npx expo start --tunnel
     ```
 
