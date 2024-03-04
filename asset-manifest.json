@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/redact-composer-inspector-dev/static/js/main.aea30685.js",
+    "main.js": "/redact-composer-inspector-dev/static/js/main.c72bf501.js",
     "static/js/441.dcffbdd2.js": "/redact-composer-inspector-dev/static/js/441.dcffbdd2.js",
     "static/media/FontAwesome.ttf": "/redact-composer-inspector-dev/static/media/FontAwesome.1e59d2330b4c6deb84b3.ttf",
     "favicon.ico": "/redact-composer-inspector-dev/favicon.ico",
@@ -9,11 +9,11 @@
     "favicon-16.png": "/redact-composer-inspector-dev/favicon-16.png",
     "manifest.json": "/redact-composer-inspector-dev/manifest.json",
     "serve.json": "/redact-composer-inspector-dev/serve.json",
-    "main.aea30685.js.map": "/redact-composer-inspector-dev/static/js/main.aea30685.js.map",
+    "main.c72bf501.js.map": "/redact-composer-inspector-dev/static/js/main.c72bf501.js.map",
     "441.dcffbdd2.js.map": "/redact-composer-inspector-dev/static/js/441.dcffbdd2.js.map"
   },
   "entrypoints": [
     "static/js/441.dcffbdd2.js",
-    "static/js/main.aea30685.js"
+    "static/js/main.c72bf501.js"
   ]
 }
